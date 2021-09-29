@@ -2,7 +2,7 @@
 
 class Worker
 {
-    const AGE_RANGES = [18, 70];
+    private const AGE_RANGES = [18, 70];
 
     public $name;
     public $age;
