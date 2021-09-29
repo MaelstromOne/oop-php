@@ -8,13 +8,18 @@ class Worker
     public $age;
     public $salary;
 
-    public function checkAge(): string
+    public function __construct($name, $age, $salary) {
+        $this->name = $name;
+        $this->age = $age;
+        $this->salary = $salary;
+
+        $this->checkAge();
+    }
+
+    public function checkAge()
     {
-        if (self::AGE_RANGES[0] < $this->age && self::AGE_RANGES[1] > $this->age) {
-            return "возраст входит в рамки";
-        }
-        else {
-            return "возраст выходит в рамки";
+        if (self::AGE_RANGES[0] > $this->age || self::AGE_RANGES[1] < $this->age) {
+            trigger_error("Возраст не входит в диапозон", E_USER_WARNING);
         }
     }
 }
