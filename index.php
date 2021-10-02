@@ -2,20 +2,7 @@
 
 use classes\Db;
 
-function load($ClassName)
-{
-    echo "<pre>";
-    echo "\n";
-
-    $file = __DIR__ . "/{$ClassName}.php";
-    print_r($file);
-    if (file_exists($file)) {
-        require_once($file);
-    }
-}
-
-spl_autoload_register('load');
-
+require_once __DIR__ . "/vendor/autoload.php";
 
 $host = '127.0.0.1';
 $db   = 'gbook';
